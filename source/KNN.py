@@ -3,9 +3,15 @@ import pandas as pd
 from sklearn import preprocessing, model_selection, neighbors
 
 inputDataFile = 'input/numericDataSet.csv'
-k = 10
+k = 50
 
 df = pd.read_csv(inputDataFile)
+print(df.columns.values)
+
+df.drop(['Unnamed: 0'], axis = 'columns', inplace = True)
+print(df.columns.values)
+
+
 
 x = np.array(df.drop(['Group'], 1))
 y = np.array(df['Group'])
