@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 maxDesK = 60
-inputDataFile = 'input/numericDataSet.csv'
+inputDataFile = '../input/numericDataSet.csv'
 
 
 df = pd.read_csv(inputDataFile)
