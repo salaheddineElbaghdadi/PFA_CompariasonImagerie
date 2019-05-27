@@ -4,18 +4,20 @@ from sklearn.preprocessing import StandardScaler
 import numpy as np
 import matplotlib.pyplot as plt
 
-maxDesK = 100
+maxDesK = 60
 inputDataFile = 'numericDataSet.csv'
 
-
+# reading data from csv file
 df = pd.read_csv(inputDataFile)
 df.drop(['Unnamed: 0'], axis = 'columns', inplace = True)
 
 
-
+# dividing data to input and output
 x = np.array(df.drop(['Group'], 1))
 y = np.array(df['Group'])
 df.reset_index()
+
+#dividing data to the training set and the testing set
 x_train, x_test, y_train, y_test = model_selection.train_test_split(x, y, test_size = 0.2, random_state=1, stratify=y)
 
 

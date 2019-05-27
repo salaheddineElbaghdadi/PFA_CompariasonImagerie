@@ -73,7 +73,7 @@ reader = csv.reader(csvFile)
 for row in reader:
     result.append(row)
 
-# Convertin data to numeric
+# Converting data to numeric
 for i in range(1, len(result)):
     row = []
 
