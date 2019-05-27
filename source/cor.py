@@ -8,12 +8,16 @@ outputfile = 'output/numericDataSet.csv'
 
 #reading data from csv file
 data = pd.read_csv(file);
+print(data.head())
+print(data.info())
 #replacing non numerical data by numerical values
 data.replace({'F':0, 'M':1, 'L':0, 'R':1, 'Nondemented':0, 'Demented':1, 'Converted':1}, inplace = True)
+print(data.head())
 #droping unnecessary columns
 data.drop(['Subject ID', 'MRI ID', 'Visit'], axis = 'columns', inplace = True)
 
-cor_matrix = data.corr()
+cor_matrix = data.dropna().corr()
+print(cor_matrix)
 hm = sb.heatmap(cor_matrix, annot=True)
 plt.show()
 
@@ -24,7 +28,7 @@ cols = ['Group','MR Delay', 'M/F', 'Hand', 'Age', 'EDUC','SES','MMSE','CDR', 'eT
 data.drop(['ASF'], axis = 'columns', inplace = True)
 data.dropna(inplace = True)
 
-print(data.head())
-print(data.info())
+#print(data.head())
+#print(data.info())
 
 data.to_csv(outputfile, quoting=csv.QUOTE_NONE)
