@@ -4,8 +4,8 @@ from sklearn.preprocessing import StandardScaler
 import numpy as np
 import matplotlib.pyplot as plt
 
-maxDesK = 60
-inputDataFile = 'input/numericDataSet.csv'
+maxDesK = 100
+inputDataFile = 'numericDataSet.csv'
 
 
 df = pd.read_csv(inputDataFile)
