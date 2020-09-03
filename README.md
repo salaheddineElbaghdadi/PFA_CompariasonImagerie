@@ -1,2 +1,4 @@
 # PFA_CompariasonImagerie
-Projet PFA, comparaisons d'imagerie par résonance magnétique des adultes déments et nom déments
+
+Magnetic Resonance Imaging Comparisons of Demented and Nondemented Adults.
+End of 1st year project.
