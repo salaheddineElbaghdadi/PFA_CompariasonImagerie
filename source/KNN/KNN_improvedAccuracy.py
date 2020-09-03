@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 import numpy as np
 import matplotlib.pyplot as plt
 
-maxDesK = 60
+maxDesK = 40
 inputDataFile = 'numericDataSet.csv'
 
 # reading data from csv file

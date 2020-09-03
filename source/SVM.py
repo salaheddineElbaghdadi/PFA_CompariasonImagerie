@@ -5,10 +5,11 @@ import numpy as np
 from sklearn.metrics import classification_report
 from sklearn.preprocessing import StandardScaler
 
+url='https://raw.githubusercontent.com/salaheddineElbaghdadi/PFA_CompariasonImagerie/master/source/output/numericDataSet.csv'
 
 inputDataFile = 'input/numericDataSet.csv'
 df = pd.read_csv(inputDataFile)
-df.drop(['Unnamed: 0'], axis = 'columns', inplace = True)
+#df.drop(['Unnamed: 0'], axis = 'columns', inplace = True)
 X = np.array(df.drop(['Group'], 1))
 y = np.array(df['Group'])
 df.reset_index()
@@ -16,7 +17,9 @@ X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_s
 
 
 scaler = StandardScaler()
-X_train = scaler.fit_transform(X_train)
+scaler.fit(X_train)
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
 
 for kernel in ['linear', 'rbf','sigmoid']:
     svm = SVC(kernel=kernel)
